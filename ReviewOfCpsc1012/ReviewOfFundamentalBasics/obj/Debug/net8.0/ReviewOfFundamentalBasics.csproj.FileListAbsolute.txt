@@ -1,0 +1,14 @@
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\bin\Debug\net8.0\ReviewOfFundamentalBasics.exe
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\bin\Debug\net8.0\ReviewOfFundamentalBasics.deps.json
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\bin\Debug\net8.0\ReviewOfFundamentalBasics.runtimeconfig.json
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\bin\Debug\net8.0\ReviewOfFundamentalBasics.dll
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\bin\Debug\net8.0\ReviewOfFundamentalBasics.pdb
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\obj\Debug\net8.0\ReviewOfFundamentalBasics.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\obj\Debug\net8.0\ReviewOfFundamentalBasics.AssemblyInfoInputs.cache
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\obj\Debug\net8.0\ReviewOfFundamentalBasics.AssemblyInfo.cs
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\obj\Debug\net8.0\ReviewOfFundamentalBasics.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\obj\Debug\net8.0\ReviewOfFundamentalBasics.dll
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\obj\Debug\net8.0\refint\ReviewOfFundamentalBasics.dll
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\obj\Debug\net8.0\ReviewOfFundamentalBasics.pdb
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\obj\Debug\net8.0\ReviewOfFundamentalBasics.genruntimeconfig.cache
+\\Mac\Home\Desktop\CPSC1517 1242\ReviewOfCpsc1012\ReviewOfFundamentalBasics\obj\Debug\net8.0\ref\ReviewOfFundamentalBasics.dll

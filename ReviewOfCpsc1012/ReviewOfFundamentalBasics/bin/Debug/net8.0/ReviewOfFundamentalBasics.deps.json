@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ReviewOfFundamentalBasics/1.0.0": {
+        "runtime": {
+          "ReviewOfFundamentalBasics.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ReviewOfFundamentalBasics/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
