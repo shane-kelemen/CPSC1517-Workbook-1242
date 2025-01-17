@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPSC1012Review", "CPSC1012Review\CPSC1012Review.csproj", "{1DBFD696-7EA8-49E5-A21C-F0593112DBBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DBFD696-7EA8-49E5-A21C-F0593112DBBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DBFD696-7EA8-49E5-A21C-F0593112DBBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DBFD696-7EA8-49E5-A21C-F0593112DBBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DBFD696-7EA8-49E5-A21C-F0593112DBBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53085F81-9550-42BB-A952-216A013CF96F}
+	EndGlobalSection
+EndGlobal

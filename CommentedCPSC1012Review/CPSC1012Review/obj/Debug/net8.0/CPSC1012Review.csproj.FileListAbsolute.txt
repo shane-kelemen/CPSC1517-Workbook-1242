@@ -1,0 +1,14 @@
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\bin\Debug\net8.0\CPSC1012Review.exe
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\bin\Debug\net8.0\CPSC1012Review.deps.json
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\bin\Debug\net8.0\CPSC1012Review.runtimeconfig.json
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\bin\Debug\net8.0\CPSC1012Review.dll
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\bin\Debug\net8.0\CPSC1012Review.pdb
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\obj\Debug\net8.0\CPSC1012Review.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\obj\Debug\net8.0\CPSC1012Review.AssemblyInfoInputs.cache
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\obj\Debug\net8.0\CPSC1012Review.AssemblyInfo.cs
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\obj\Debug\net8.0\CPSC1012Review.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\obj\Debug\net8.0\CPSC1012Review.dll
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\obj\Debug\net8.0\refint\CPSC1012Review.dll
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\obj\Debug\net8.0\CPSC1012Review.pdb
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\obj\Debug\net8.0\CPSC1012Review.genruntimeconfig.cache
+\\Mac\Home\Desktop\CPSC1517 1241\Demo Projects\CPSC1012Review\CPSC1012Review\obj\Debug\net8.0\ref\CPSC1012Review.dll
