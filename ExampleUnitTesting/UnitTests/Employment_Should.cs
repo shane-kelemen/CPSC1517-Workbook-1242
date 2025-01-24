@@ -29,15 +29,15 @@ namespace TDDExampleTests
             // To show that the test will first fail with incorrect values, use the commented version
             // before using the version that should cause the test to pass.
             //actual.Title = "Hello World";  // Missing the exclamation mark.
-            actual.Title = "Hello World!";  // Comment out when testing the fail path.
+            actual.Title = "  Hello World!  ";  // Comment out when testing the fail path.
 
             // Assert - The verification that the action is working correctly (or not)
             actual.Title.Should().Be(expectedTitle);  // If the actual and expected values match, this 
                                                       // test will pass.
         }
 
-        // Theory is used to test multiple combinations of input data using a sinlge method set up to
-        // run the test.
+        //// Theory is used to test multiple combinations of input data using a sinlge method set up to
+        //// run the test.
         [Theory]
         [InlineData(null)]
         [InlineData("")]
@@ -79,8 +79,8 @@ namespace TDDExampleTests
         }
 
         [Theory]
-        [InlineData(-0.0001)]  
-        [InlineData(40.0001)]
+        [InlineData(-0.00000001)]
+        [InlineData(40.00000001)]
         public void Throw_Exception_For_Changing_Years(double years)
         {
             // Arrange
@@ -104,7 +104,7 @@ namespace TDDExampleTests
             // Arrange - Setting up the testing scenario
             Employment actual = new Employment();
             SupervisoryLevel expectedLevel = SupervisoryLevel.Supervisor;
-            
+
             // Act - The action that we are trying to test
             actual.Level = (SupervisoryLevel)3;
 
@@ -157,9 +157,9 @@ namespace TDDExampleTests
             WriteUp expectedWriteUp = new WriteUp("Late", "Henry", "Had to clean the dishes");
 
             // Act
-            //actual.WriteUps = new List<WriteUp>() { expectedWriteUp };
-            actual.WriteUps = new List<WriteUp>();
-            actual.WriteUps.Add(expectedWriteUp);
+            actual.WriteUps = new List<WriteUp>() { expectedWriteUp };
+            //actual.WriteUps = new List<WriteUp>();
+            //actual.WriteUps.Add(expectedWriteUp);
 
             // Assert
             // Compare the values of the instance that was added to ensure that the information
@@ -230,18 +230,17 @@ namespace TDDExampleTests
         [InlineData("    ", SupervisoryLevel.Supervisor, "2024-09-20", 25.7)]
         [InlineData("Hello World!", (SupervisoryLevel)(-1), "2024-09-20", 25.7)]
         [InlineData("Hello World!", (SupervisoryLevel)6, "2024-09-20", 25.7)]
-        [InlineData("Hello World!", SupervisoryLevel.Supervisor, "2024-09-20", -0000.1)]
+        [InlineData("Hello World!", SupervisoryLevel.Supervisor, "2024-09-20", -0.0001)]
         [InlineData("Hello World!", SupervisoryLevel.Supervisor, "2024-09-20", 40.0001)]
-       
-        
         public void Throw_Exception_For_Bad_Data_Using_Constructor
                         (string title, SupervisoryLevel level, DateTime startDate, double years)
         {
             // Given - Arrange
-            //DateTime start = DateTime.Parse("2024-09-20");  // This Parse call is why the string date
-                                                              // submission above is working
+            //DateTime start = DateTime.Parse("2024-09-20");  // This Parse call is why the string date         
+            // submission above is working
+
             //WriteUp writeUp = new WriteUp("Testing", "Somebody", "Writing Lines");  // If an instance is required, replace
-                                                                                      // the null with "writeUp"
+            // the null with "writeUp"
 
             // When - Act
             Action action = () => new Employment(title, level, startDate, null, years);
@@ -272,5 +271,31 @@ namespace TDDExampleTests
         }
         #endregion
 
+        #region Testing Static Method in Employment Class
+        [Fact]
+        public void Test_Value_Is_Divisible_By_Six()
+        {
+            // Arrange
+            //Employment employment = new Employment();  
+
+            // Act
+            bool isDivisible = Employment.DivisibleBySix(216);
+
+            // Assert
+            isDivisible.Should().BeTrue();
+        }
+
+        [Fact]
+        public void Test_Value_Is_Not_Divisible_By_Six()
+        {
+            // Arrange
+
+            // Act
+            bool isDivisible = Employment.DivisibleBySix(100);
+
+            // Assert
+            isDivisible.Should().BeFalse();
+        }
+        #endregion
     }
 }
