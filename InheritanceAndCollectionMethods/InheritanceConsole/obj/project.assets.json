@@ -1,0 +1,99 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "PersonSystem/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/PersonSystem.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PersonSystem.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PersonSystem/1.0.0": {
+      "type": "project",
+      "path": "../PersonSystem/PersonSystem.csproj",
+      "msbuildProject": "../PersonSystem/PersonSystem.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "PersonSystem >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\shane\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Mac\\Home\\Desktop\\CPSC1517 1242\\Demos\\Inheritance\\InheritanceConsole\\InheritanceConsole.csproj",
+      "projectName": "InheritanceConsole",
+      "projectPath": "C:\\Mac\\Home\\Desktop\\CPSC1517 1242\\Demos\\Inheritance\\InheritanceConsole\\InheritanceConsole.csproj",
+      "packagesPath": "C:\\Users\\shane\\.nuget\\packages\\",
+      "outputPath": "C:\\Mac\\Home\\Desktop\\CPSC1517 1242\\Demos\\Inheritance\\InheritanceConsole\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\shane\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "C:\\Mac\\Home\\Desktop\\CPSC1517 1242\\Demos\\Inheritance\\PersonSystem\\PersonSystem.csproj": {
+              "projectPath": "C:\\Mac\\Home\\Desktop\\CPSC1517 1242\\Demos\\Inheritance\\PersonSystem\\PersonSystem.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

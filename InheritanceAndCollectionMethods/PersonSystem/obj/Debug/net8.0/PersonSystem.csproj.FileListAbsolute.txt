@@ -1,0 +1,11 @@
+C:\Mac\Home\Desktop\CPSC1517 1242\Demos\Inheritance\PersonSystem\bin\Debug\net8.0\PersonSystem.deps.json
+C:\Mac\Home\Desktop\CPSC1517 1242\Demos\Inheritance\PersonSystem\bin\Debug\net8.0\PersonSystem.dll
+C:\Mac\Home\Desktop\CPSC1517 1242\Demos\Inheritance\PersonSystem\bin\Debug\net8.0\PersonSystem.pdb
+C:\Mac\Home\Desktop\CPSC1517 1242\Demos\Inheritance\PersonSystem\obj\Debug\net8.0\PersonSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Mac\Home\Desktop\CPSC1517 1242\Demos\Inheritance\PersonSystem\obj\Debug\net8.0\PersonSystem.AssemblyInfoInputs.cache
+C:\Mac\Home\Desktop\CPSC1517 1242\Demos\Inheritance\PersonSystem\obj\Debug\net8.0\PersonSystem.AssemblyInfo.cs
+C:\Mac\Home\Desktop\CPSC1517 1242\Demos\Inheritance\PersonSystem\obj\Debug\net8.0\PersonSystem.csproj.CoreCompileInputs.cache
+C:\Mac\Home\Desktop\CPSC1517 1242\Demos\Inheritance\PersonSystem\obj\Debug\net8.0\PersonSystem.dll
+C:\Mac\Home\Desktop\CPSC1517 1242\Demos\Inheritance\PersonSystem\obj\Debug\net8.0\refint\PersonSystem.dll
+C:\Mac\Home\Desktop\CPSC1517 1242\Demos\Inheritance\PersonSystem\obj\Debug\net8.0\PersonSystem.pdb
+C:\Mac\Home\Desktop\CPSC1517 1242\Demos\Inheritance\PersonSystem\obj\Debug\net8.0\ref\PersonSystem.dll
