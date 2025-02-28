@@ -2,11 +2,60 @@
 
 <label>Select Your Favourite Meal : </label>
 <br />
+<InputRadioGroup Name="shortMealRadio" @bind-Value="@selectedMeal">
+    <!-- C# constructs may be integratred into the markup ina razor component for dynamic
+         action, generally creation of controls or display of data.
+         The "at" symbol must be used to initiate the C# usage.
+    -->
+    @foreach (string meal in mealOptions)
+    {
+        <!-- The following shows how the loop variable may be accessed in a couple 
+             different ways.
+        -->
+        <InputRadio Name="shortMealRadio" Value="@meal" /> @($" {meal}") <br />
+    }
 
+</InputRadioGroup>
+<br />
+<br />
 
+<div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheckBox" @bind="acceptanceCheck" />
+    <label class="form-check-label" for="exampleCheckBox">I accept the terms!</label>
+</div>
+<br />
+<br />
 
+<label>
+    Message<br />
+    <textarea rows="10" cols="60" placeholder="Enter a message" @bind="messageBody">@messageBody</textarea>
+</label>
+<br />
+<br />
+
+<button type="submit" @onclick="RadioCheckTextArea">
+    Radio / Check / TextArea Submit
+</button>
+<br />
+<br />
+
+<p>@((MarkupString)feedbackRCT)</p>
 
 
 @code {
+    // Initializing variables needed in the page using initializers instead of within the constructor.
+    private List<string> mealOptions = new List<string> { "Breakfast", "Lunch", "Supper", "Snack" };
+    private string selectedMeal = "";
+    private bool acceptanceCheck = false;
+    private string messageBody = "";
+    private string feedbackRCT = "";
 
+    // This method will display the values of the individual controls to the feedback variable
+    private void RadioCheckTextArea()
+    {
+        feedbackRCT = $"Meal : {selectedMeal}<br />Accept : {acceptanceCheck}<br />"
+                            + $"Message : {messageBody}";  // Remember if splitting a string between lines in
+                                                           // in the editor, you must respecify the string as 
+                                                           // interpolative.
+    }
 }

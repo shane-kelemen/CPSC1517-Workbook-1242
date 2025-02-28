@@ -1,0 +1,105 @@
+﻿@page "/dataEntry"
+
+<PageTitle>Data Entry</PageTitle>
+
+<h1>Data Entry</h1>
+
+<div class="row">    <!-- Bootstrap to turn screen into 12 blocks horizontally -->
+    <div class="offset-1 col-md-10">   <!-- Bootstrap to create an space 10 of the blocks wide starting one
+                                                block from the left hand side of the screen-->
+
+        <blockquote style="background-color:gainsboro">
+            <p>
+                This component will demonstrate how your page can handle validation of data input,
+                showing validation messages when you have a number of controls for data entry. This
+                component will validate the locate controls and create any validation messages for
+                invalid data. The messages can be collected using various techniques such as: List or
+                Dictionary.
+            </p>
+            <p>
+                This page will input data for an instance of the Employment class. This demo will
+                use the Employment class from the OOPs review. The SupervisoryLevel enum
+                class will also be brought into this project. One could have included the entire
+                class library as part of this solution instead of bringing in individual classes.
+            </p>
+            <p>
+                One could have included an entire project and used the classes from within, but we have
+                already created a class library for this project and so will use it instead.  If at all
+                possible, it is best practice to include the various projects in the same solution,
+                but this will not always be possible as you are not always creating all of the projects.
+            </p>
+        </blockquote>
+
+    </div>
+</div>
+<br />
+
+<!-- The following fieldset contains the controls that will collect the information
+     needed to create an Employment class instance.  Note that each has been placed
+     in its own div with two embedded divs to hold the label and control respectively.
+     This will help with alignment of the controls.
+-->
+<fieldset>
+    <legend>Employment Data</legend>
+
+    <div class="row">
+        <div class="col-md-2">
+            <label for="title">Position Title : </label>
+        </div>
+        <div class="col-md-2">
+            <input type="text" id="title" @bind="employmentTitle" placeholder="Enter position title" />
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-2">
+            <label for="startDate">Start Date : </label>
+        </div>
+        <div class="col-md-2">
+            <input type="date" id="startDate" @bind="startDate"/>
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-2">
+            <label for="years">Years in Position : </label>
+        </div>
+        <div class="col-md-2">
+            <input type="number" id="years" @bind="employedYears" step="0.1" 
+                        min="0" style="width:75px" placeholder="ex. 3.4"/>
+        </div>
+    </div>
+    <br />
+
+
+
+
+</fieldset>
+
+@code {
+    private string employmentTitle = "";
+    private DateTime startDate;
+    decimal employedYears = 0;
+
+
+
+
+
+
+    // Note that all code will be removed from this block to the "code-behind" page,
+    // which will not adversely affect the page's functionality.
+}
+
+
+
+
+
+
+<!-- Uncomment the following button if you wish to use it to repeat the string analysis
+     we looked at in class.
+-->
+@* <input type="submit" value="Look at String" @onclick="ProcessString" /> *@
+
+

@@ -1,5 +1,107 @@
-﻿<h3>ListAndSlider</h3>
+﻿<!-- If an object that is not defined in the page exists in another namespace,
+     you may gain access to it by including an "at"using directive.  Note that this
+     is true if the target is part of the current project or is referenced from
+     another project.
+-->
+@using BlazorWebApp.Data
+
+<h5>List and Slider</h5>
+
+<!-- This following section created a DropDownList (select) dynamically using a
+     List of SelectionList instances in the C# code area.
+     
+     Note: Remember that the SelectionList class can be found in the Data folder
+-->
+<label>
+    Select Favourite Ride
+    <select @bind="myRide">  <!-- The selected VALUE is obtained through the "at"bind -->
+        <option value="0">Select a ride...</option>  <!-- You may include non-dynamic (or hardcoded) options -->
+
+        <!-- The following block creates the rest of the options dynamically -->
+        @foreach (SelectionList ride in Rides)
+        {
+            <option value="@ride.ValueID">@ride.DisplayText</option>
+        }
+    </select>
+</label>
+<br />
+<br />
+
+<!-- Another way of using Lists of items is through the datalist connection to a textbox
+     The items that can be selected will be filtered by what is entered into the textbox.
+     The textbox entry is NOT restricted to one of the possible selections.
+-->
+<label>
+    Select Favourite Vacation Spot
+    <input type="text" @bind="vacationSpot" list="VacationChoices" />
+
+    <!-- Note that the link between the textbox and the datalist is the textbox list attribute
+         to the datalist id attribute -->
+    <datalist id="VacationChoices">
+
+        @foreach (string vacation in VacationSpotList)
+        {
+            <option value="@vacation" />
+        }
+
+    </datalist>
+</label>
+<br />
+<br />
+
+<label>
+    Review of Vacation Spot (Low to High)
+    <input type="range" min="0" max="20" step="1" @bind="reviewValue" />
+</label>
+@reviewValue
+<br />
+<br />
+
+<input type="submit" value="List and Slider Submit" @onclick="ProcessListsAndSlider" />
+
+<br />
+<br />
+
+<p>@((MarkupString)feedbackLS)</p>
+
+
 
 @code {
+    private int myRide = 0;             // bind value for the DropDownList (select)
+    private string vacationSpot = "";   // bind value for the datalist textbox
+    private int reviewValue = 0;        // bind value for the slider
+    private string feedbackLS = "";
 
+    private List<SelectionList> Rides { get; set; }
+    private List<string> VacationSpotList { get; set; } = new List<string>();  // Using an intializer
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        Rides = new List<SelectionList>();   // A collection can be created here instead of using the initializer
+
+        // Add some SelectionList items to the list.  Note that each may be initialized without
+        // an explicit constructor using the following special syntax because the members are both
+        // automatic properties.
+        Rides.Add(new SelectionList() { ValueID = 3, DisplayText = "Bike" });
+        Rides.Add(new SelectionList() { ValueID = 5, DisplayText = "Board" });
+        Rides.Add(new SelectionList() { ValueID = 2, DisplayText = "Bus" });
+        Rides.Add(new SelectionList() { ValueID = 1, DisplayText = "Car" });
+        Rides.Add(new SelectionList() { ValueID = 4, DisplayText = "Motorcycle" });
+
+        // Add some items to the vacation string list to be used to populate the datalist
+        VacationSpotList.Add("California");
+        VacationSpotList.Add("Florida");
+        VacationSpotList.Add("Carribean");
+        VacationSpotList.Add("Europe");
+        VacationSpotList.Add("Mexico");
+        VacationSpotList.Add("Hawaii");
+    }
+
+    private void ProcessListsAndSlider()
+    {
+        feedbackLS = $"Favourite Ride : {myRide}<br />Favourite Spot : {vacationSpot}<br />"
+                        + $"Review : {reviewValue}";
+    }
 }
