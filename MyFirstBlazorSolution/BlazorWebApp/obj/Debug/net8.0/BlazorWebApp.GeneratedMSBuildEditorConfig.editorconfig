@@ -1,0 +1,79 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BlazorWebApp
+build_property.RootNamespace = BlazorWebApp
+build_property.ProjectDir = C:\Mac\Home\Desktop\CPSC1517 1242\Demos\MyFirstBlazorSolution\BlazorWebApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Mac\Home\Desktop\CPSC1517 1242\Demos\MyFirstBlazorSolution\BlazorWebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/Pages/ExamplePages/BasicButtonEvents.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFeGFtcGxlUGFnZXNcQmFzaWNCdXR0b25FdmVudHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/Pages/ExamplePages/Controls.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFeGFtcGxlUGFnZXNcQ29udHJvbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/Pages/ExamplePages/ListAndSlider.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFeGFtcGxlUGFnZXNcTGlzdEFuZFNsaWRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/Pages/ExamplePages/RadioCheckboxTextArea.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFeGFtcGxlUGFnZXNcUmFkaW9DaGVja2JveFRleHRBcmVhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/Pages/ExamplePages/Textboxes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFeGFtcGxlUGFnZXNcVGV4dGJveGVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/Pages/FirstPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGaXJzdFBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-r215xwi2mi
+
+[C:/Mac/Home/Desktop/CPSC1517 1242/Demos/MyFirstBlazorSolution/BlazorWebApp/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-ajqwrrfjf8

@@ -1,0 +1,59 @@
+﻿<!-- Note how there is no "at"page directive in this component.  This means the component cannot
+     be navigated to directly, but it may be used in other components by using its name in tag form.
+-->
+<h5>Textboxes</h5>
+
+<label>
+    Password Input :
+    <input type="password" @bind="passwordText" placeholder="Enter Password" />
+</label>
+<br />
+<br />
+
+<label>
+    Email Input :
+    <input type="email" @bind="emailText" placeholder="Enter Email" />
+</label>
+<br />
+<br />
+
+<label> 
+    Date Input :
+    <input type="date" @bind="dateText" placeholder="Enter Date" />
+</label>
+<br />
+<br /> 
+
+<input type="submit" value="Textbox Test" @onclick="ProcessTextboxes" />
+<br />
+<br />
+
+<!-- When trying to embed HTML tags in your output string, make sure to cast
+     it as a MarkupString.  All shown brackets are required.
+-->
+<p>@((MarkupString)feedbackText)</p>
+
+
+
+@code {
+    private string passwordText = "";
+    private string emailText = "";
+    private DateTime dateText;
+    private string feedbackText = "";
+
+    // Consider the OnInitialized() method to be similar to a constructor
+    protected override void OnInitialized()
+    {
+        // When initializing a class instance, we always initialize the base or core of the class first.
+        base.OnInitialized();
+
+        // Then any further intitialization of the derived class members is completed.
+        dateText = DateTime.Today;
+    }
+
+    private void ProcessTextboxes()
+    {
+        feedbackText = $"Password : {passwordText}<br />Email : {emailText} "
+                        + $"<br />Date : {dateText.ToShortDateString()}";
+    }
+}

@@ -1,0 +1,81 @@
+﻿@page "/basicEvents" 
+
+<!-- If the "at"rendermode has not been included in the App.razor component,
+     then you must include it so that form objects work properly
+
+     "at-symbol-no-quotes"rendermode InteractiveServer
+-->
+
+<h1>Basic Button Events</h1>
+
+<h5>Learning About Buttons and Events - Basic C# Interaction</h5>
+
+<blockquote style="background-color: burlywood">
+    This page will demonstrate the basics of button events.  It will use an input control
+    for user input.  A button control will be included to initiate processing of the input.
+    The result will be displayed to a "label".  C# code will be used to complete the processing.
+</blockquote>
+
+<p>@welcomeMessage</p>
+
+<br /><br />
+
+<label for="inputControl">Enter an 'H' for Heads ot 'T' for Tails : </label>
+<input id="inputControl" type="text" maxlength="1" placeholder="eg. : H"
+        @bind="inputValue" /> <!-- The bind attribute connects the value in the textbox
+                                    to the variable in the C# code block
+                               -->
+
+<br />
+
+<button type="submit" @onclick="Game" class="btn btn-outline-primary">
+    Enter
+</button>
+
+<br /><br />
+
+<p>@((MarkupString)outputMessage)</p>
+
+
+
+@code {
+    private string welcomeMessage = "";
+    private string inputValue = "";
+    private string outputMessage = "";
+
+    private void Game()
+    {
+        Random rng = new Random();
+        int computerFlip = rng.Next(2);
+
+        int playerFlip;
+        if (inputValue.ToUpper() == "H")
+        {
+            playerFlip = 0;
+        }
+        else if (inputValue.ToUpper() == "T")
+        {
+            playerFlip = 1;
+        }
+        else
+        {
+            playerFlip = 2;
+        }
+
+        if (playerFlip == 2)
+        {
+            outputMessage = "You have not entered an 'H' for Heads or 'T' for Tails. ";
+        }
+
+        if (playerFlip == computerFlip)
+        {
+            outputMessage = "You guessed the computer's value. ";
+        }
+        else
+        {
+            outputMessage = "You have NOT guessed the computer's value. ";
+        }
+
+        outputMessage += "<br />Computer flipped " + (computerFlip == 0 ? "Heads" : "Tails");
+    }
+}
