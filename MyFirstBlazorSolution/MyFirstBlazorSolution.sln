@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebApp", "BlazorWebApp\BlazorWebApp.csproj", "{BFA7A13F-5DBC-4C68-B422-273E86C83F7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebApp", "BlazorWebApp\BlazorWebApp.csproj", "{BFA7A13F-5DBC-4C68-B422-273E86C83F7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmploymentSystem", "EmploymentSystem\EmploymentSystem.csproj", "{6003B6B0-846D-4409-8B21-1F7C6BAA520A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BFA7A13F-5DBC-4C68-B422-273E86C83F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFA7A13F-5DBC-4C68-B422-273E86C83F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFA7A13F-5DBC-4C68-B422-273E86C83F7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6003B6B0-846D-4409-8B21-1F7C6BAA520A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6003B6B0-846D-4409-8B21-1F7C6BAA520A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6003B6B0-846D-4409-8B21-1F7C6BAA520A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6003B6B0-846D-4409-8B21-1F7C6BAA520A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

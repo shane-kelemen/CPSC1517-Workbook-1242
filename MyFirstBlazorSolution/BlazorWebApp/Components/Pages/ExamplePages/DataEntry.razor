@@ -1,5 +1,7 @@
 ﻿@page "/dataEntry"
 
+@using EmploymentSystem
+
 <PageTitle>Data Entry</PageTitle>
 
 <h1>Data Entry</h1>
@@ -73,21 +75,115 @@
     </div>
     <br />
 
+    <div class="row">
+        <div class="col-md-2">
+            <label for="level">Select Supervisory Level : </label>
+        </div>
+        <div class="col-md-2">
+            <select @bind="employmentLevel">
+                <option value="None" selected>Select a Level...</option>
+                <!-- Remember that the GetValues() method will return all of the
+                     defined values in an enumeration.
+                -->
+                @foreach(var item in Enum.GetValues(typeof(SupervisoryLevel)))
+                {
+                    <!-- When the only information available is a display string
+                         it may be used for both the display tesxt and the value
+                    -->
+                    <option value="@item">@item</option>
+                }
+            </select>
+        </div>
+    </div>
+    <br />
 
+    <!-- Note that all of the CSS classes you see below, as well as those above
+         are part of the Bootstrap add-on.  If you wish to delve into Bootstrap
+         more you may take a look at https://www.w3schools.com/bootstrap/default.asp
+         for a decent starter tutorial.
+    -->
+    <div class="row">
+        <div class="col-md-12 text-center">
 
+            <button type="submit" class="btn btn-outline-primary rounded-pill"
+                        @onclick="CollectEmploymentInfo">
+                    Submit Employment Info
+            </button>
+            &nbsp;&nbsp;
 
+            <button type="submit" class="btn btn-outline-secondary rounded-pill"
+                    @onclick="Clear">
+                Submit Employment Info
+            </button>
+            &nbsp;&nbsp;
+
+            <button type="submit" class="btn btn-outline-danger rounded-pill"
+                    @onclick="GoToReport">
+                Submit Employment Info
+            </button>
+            &nbsp;&nbsp;
+
+            <button type="submit" class="btn btn-outline-success rounded-pill">
+                <a href="report">Go To Report Via Anchor</a>
+            </button>
+            &nbsp;&nbsp;
+
+        </div>
+    </div>
 </fieldset>
 
+<br /><br />
+
+@if (feedback.Length > 0)
+{
+    <!-- Bootstrap for div colouring -->
+    <div class="alert alert-info">
+        <p>@feedback</p>
+    </div>
+}
+
+<!-- Do the following only if there are error messages.  
+        Style choice of where to put this on the page 
+-->
+@if (errorMessages.Count > 0)
+{
+    <div class="alert alert-danger">
+
+        <p>Please fic the following issues : </p>
+        <ul>
+            <!-- This following way of accessing the items in the Dictionary allows
+                us to directly display the contents of the inner values List collection.
+
+                "at"foreach (string error in errorMessages.Values)
+                {
+                    <li>"at"error</li>
+                }
+            -->
+            <!-- This is a more explicit way of remembering what the data type is that
+                you are dealing with inside the Dictionary.
+
+            "at"foreach(KeyValuePair<string,string> error in errorMessages)
+            {
+                <li>"at"error.Value</li>
+            }
+             -->
+            <!-- This following is probably the "cleanest" way to access the Dictionary
+                 key/value pairs with the most flexibility but the easiest amount of code
+                 to write.  However, it requires you to keep in mind what it is that you
+                 are accessing.  The following will display each text detailed error
+                 message as an unordered list item.
+            -->
+            @foreach (var error in errorMessages)
+            {
+                <li>@error.Value</li>
+            }
+        </ul>
+
+    </div>
+}
+
+
 @code {
-    private string employmentTitle = "";
-    private DateTime startDate;
-    decimal employedYears = 0;
-
-
-
-
-
-
     // Note that all code will be removed from this block to the "code-behind" page,
     // which will not adversely affect the page's functionality.
 }
