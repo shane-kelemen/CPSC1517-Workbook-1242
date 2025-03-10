@@ -1,0 +1,83 @@
+﻿@page "/report"
+
+@using EmploymentSystem
+
+<PageTitle>Tabular Report</PageTitle>
+
+<h1>EmploymentReport</h1>
+<h3>Demonstrates tabular reporting and File I/O extraction using File Object methods.</h3>
+
+<!-- Note that the following if-else if-else ladder only needs the one beginning "at" symbol
+     Internal C# constructs will still need their own
+-->
+@if (employments == null)
+{
+    <p>You need a .csv file containing your employment data.</p>
+}
+else if (employments.Count == 0)// If the .csv file was empty, thus no employments parsed
+                                // This will also happen if all contained employments could
+                                // not be Parsed successfully.  Error messages will also display
+{
+    <p>No employments found in the provided file.</p>
+}
+else   // The employments list has valid employment data.
+{
+    <!-- Create the table in HTML as normal.  The table class is from Bootstrap -->
+    <table class="table">
+        <thead>
+            <th>Title</th>
+            <th>Start Date</th>
+            <th>Level</th>
+            <th>Years</th>
+        </thead>
+        <tbody>
+            <!-- Create a dynamic row for the table from each employment in the List -->
+            @foreach (var item in employments)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.StartDate.ToShortDateString()</td>
+                    <td>@item.Level</td>
+                    <td>@item.Years</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<br />
+<br />
+
+<!-- Standard feedback and error blocks -->
+@if (feedback.Length > 0)
+{
+    <!-- Bootstrap for div colouring -->
+    <div class="alert alert-info">
+        <p>@feedback</p>
+    </div>
+}
+
+<!-- Do the following only if there are error messages.
+        Style choice of where to put this on the page
+-->
+@if (errorMessages.Count > 0)
+{
+    <div class="alert alert-danger">
+
+        <p>Please fic the following issues : </p>
+        <ul>
+            @foreach (var error in errorMessages)
+            {
+                <!-- Since this time we are using a List<string> instead of a
+                     Dictionary, we do not need to specify the Value, just using
+                     "at"error directly is already in string format.-->
+                <li>@error</li>
+            }
+        </ul>
+
+    </div>
+}
+
+
+
+

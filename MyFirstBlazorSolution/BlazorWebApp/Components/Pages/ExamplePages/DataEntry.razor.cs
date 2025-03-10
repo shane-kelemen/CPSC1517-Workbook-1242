@@ -1,5 +1,6 @@
 ﻿using EmploymentSystem;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 namespace BlazorWebApp.Components.Pages.ExamplePages
 {
@@ -28,6 +29,12 @@ namespace BlazorWebApp.Components.Pages.ExamplePages
         // to extract the path of our current working directory.
         [Inject]
         private IWebHostEnvironment WebHostEnvironment { get; set; }
+
+        [Inject]
+        private IJSRuntime JSRuntime { get; set; }
+
+        [Inject]
+        private NavigationManager NavigationManager { get; set; }
 
 
 
@@ -150,14 +157,27 @@ namespace BlazorWebApp.Components.Pages.ExamplePages
             return ex;
         }
 
-        private void Clear()
+        private async Task Clear()
         {
+            feedback = "";
 
+            object[] messageLine = new object[]
+                { "Clearing will lose all unsaved data.  Are you sure you want to clear the form?" };
+
+            if (await JSRuntime.InvokeAsync<bool>("confirm", messageLine))
+            {
+                errorMessages.Clear();
+
+                employmentTitle = "";
+                startDate = DateTime.Today;
+                employedYears = 0;
+                employmentLevel = SupervisoryLevel.Entry;
+            }
         }
 
         private void GoToReport()
         {
-
+            NavigationManager.NavigateTo("report");
         }
 
 
