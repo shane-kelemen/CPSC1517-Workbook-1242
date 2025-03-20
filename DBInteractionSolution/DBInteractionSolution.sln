@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBInteractionWebApp", "DBInteractionWebApp\DBInteractionWebApp.csproj", "{FCAB0D75-A6B2-42F9-ABAF-0FE521F3D9A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBInteractionSystem", "DBInteractionSystem\DBInteractionSystem.csproj", "{CFACE626-012A-4F0E-A6B7-2108046B6F5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCAB0D75-A6B2-42F9-ABAF-0FE521F3D9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCAB0D75-A6B2-42F9-ABAF-0FE521F3D9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCAB0D75-A6B2-42F9-ABAF-0FE521F3D9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCAB0D75-A6B2-42F9-ABAF-0FE521F3D9A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFACE626-012A-4F0E-A6B7-2108046B6F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFACE626-012A-4F0E-A6B7-2108046B6F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFACE626-012A-4F0E-A6B7-2108046B6F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFACE626-012A-4F0E-A6B7-2108046B6F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {146F2CBA-1E5A-4027-B7D3-CDA071362AB6}
+	EndGlobalSection
+EndGlobal
