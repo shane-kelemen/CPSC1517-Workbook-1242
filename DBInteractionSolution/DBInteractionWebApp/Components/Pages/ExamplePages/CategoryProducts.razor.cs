@@ -1,6 +1,7 @@
 ﻿using DBInteractionSystem.BLL;
 using DBInteractionSystem.Entities;
 using Microsoft.AspNetCore.Components;
+using DBInteractionWebApp.Utilities;
 
 namespace DBInteractionWebApp.Components.Pages.ExamplePages
 {
@@ -35,7 +36,7 @@ namespace DBInteractionWebApp.Components.Pages.ExamplePages
             }
             catch (Exception ex)
             {
-                errorMessages.Add(GetInnerException(ex).Message);
+                errorMessages.Add(ExceptionHelper.GetInnerException(ex).Message);
             }
         }
 
@@ -66,7 +67,7 @@ namespace DBInteractionWebApp.Components.Pages.ExamplePages
                 }
                 catch(Exception ex)
                 {
-                    errorMessages.Add(GetInnerException(ex).Message);
+                    errorMessages.Add(ExceptionHelper.GetInnerException(ex).Message);
                 }
             }
         }
@@ -87,18 +88,6 @@ namespace DBInteractionWebApp.Components.Pages.ExamplePages
                 ++productPage;
                 FetchProducts();
             }
-        }
-
-
-
-        private Exception GetInnerException(Exception ex)
-        {
-            while (ex.InnerException != null)
-            {
-                ex = ex.InnerException;
-            }
-
-            return ex;
         }
     }
 }

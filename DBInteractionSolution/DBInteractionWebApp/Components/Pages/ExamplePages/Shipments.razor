@@ -1,0 +1,80 @@
+﻿@page "/shipments"
+
+<PageTitle>Shipments</PageTitle>
+
+<h1>Shipments</h1>
+
+
+<div class="row">
+    <div class="col-md-3">
+        <p><strong>Input of Query Values</strong></p>
+        <label>
+            Enter Shipment Year : 
+            <input id="year" type="number" @bind="yearArg" style="width:75px;" />
+        </label>
+        <br /><br />
+        <label>
+            Enter Shipment Month :
+            <input id="month" type="number" @bind="monthArg" style="width:75px;" />
+        </label>
+        <br /><br />
+        <button type="submit" @onclick="GetShipmentByYearAndMonth"
+                class="btn btn-outline-primary rounded-pill">Fetch Shipments</button>
+    </div>
+    <div class="col-md-9">
+        <p><strong>Display of Query Results</strong></p>
+        @if(shipments == null || shipments.Count == 0)
+        {
+            <p>No data found for the submitted year and month values!</p>
+        }
+        else
+        {
+            <div class="overflow-scroll" style="height:500px">
+                <table class="table table-striped">
+                    <thead>
+                        <thr>
+                            <th>ID</th>
+                            <th>Order</th>
+                            <th>Shipped Date</th>
+                            <th>Shipper's Name</th>
+                            <th>Freight Charge</th>
+                        </thr>
+                    </thead>
+                    <tbody>
+                        @foreach(var shipment in shipments)
+                        {
+                            <tr>
+                                <td>@shipment.ShipmentID</td>
+                                <td>@shipment.OrderID</td>
+                                <td>@shipment.ShippedDate.ToShortDateString()</td>
+                                <td>@shipment.ShipViaNavigation.CompanyName</td>
+                                <td style="text-align: right">@shipment.FreightCharge.ToString("C2")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
+<br /><br />
+
+@if (feedback.Length > 0)
+{
+    <div class="alert alert-info">
+        <p>@feedback</p>
+    </div>
+}
+
+@if (errorMessages.Count > 0)
+{
+    <div class="alert alert-danger">
+        <p>Please fix the following errors:</p>
+        <ul>
+            @foreach (string error in errorMessages)
+            {
+                <li>@error</li>
+            }
+        </ul>
+    </div>
+}

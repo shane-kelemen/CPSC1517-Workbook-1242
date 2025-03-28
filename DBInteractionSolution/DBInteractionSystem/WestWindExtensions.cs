@@ -43,6 +43,12 @@ namespace DBInteractionSystem
                 var context = serviceProvider.GetService<WestWindContext>();
                 return new CategoryServices(context);
             });
+
+            services.AddTransient<ShipmentServices>(serviceProvider =>
+            {
+                var context = serviceProvider.GetService<WestWindContext>();
+                return new ShipmentServices(context);
+            });
         }
 
    
