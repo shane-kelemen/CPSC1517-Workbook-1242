@@ -84,7 +84,7 @@ namespace DBInteractionSystem.BLL
             // The following shows how the above commands may all be combined into a single executable
             // statement for a more streamlined method.
             return _westWindContext.Regions.Where(region => region.RegionID == regionID)
-                                             .FirstOrDefault();
+                                           .FirstOrDefault();
 
         }
     }

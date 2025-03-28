@@ -32,6 +32,17 @@ namespace DBInteractionSystem
                 return new RegionServices(context);
             });
 
+            services.AddTransient<ProductServices>(serviceProvider =>
+            {
+                var context = serviceProvider.GetService<WestWindContext>();
+                return new ProductServices(context);
+            });
+
+            services.AddTransient<CategoryServices>(serviceProvider =>
+            {
+                var context = serviceProvider.GetService<WestWindContext>();
+                return new CategoryServices(context);
+            });
         }
 
    

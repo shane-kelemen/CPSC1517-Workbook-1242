@@ -1,0 +1,88 @@
+﻿@page "/categoryProducts"
+
+<PageTitle>Category Products</PageTitle>
+
+<h1>Category Products</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <label for="categoryList">Select a Category : </label>
+        <select id="categoryList" @bind="@categoryID">
+            <option value="0">Select...</option>
+            @foreach(var item in categories)
+            {
+                <option value="@item.CategoryID">@item.CategoryName</option>
+            }
+        </select>
+        <button type="submit" class="btn btn-primary rounded-pill" @onclick="FetchReset">Fetch Products</button>
+    </div>
+</div>
+<br />
+<br />
+<div class="row">
+    <div class="offset-2 col-md-8">
+        @if(products.Count > 0)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <thr>
+                        <th>&nbsp;</th>
+                        <th>Product</th>
+                        <th>Supplier</th>
+                        <th>Unit Size</th>
+                        <th>Discontinued?</th>
+                    </thr>
+                </thead>
+                <tbody>
+                    @foreach (var product in products)
+                    {
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>@product.ProductName</td>
+                            <td>@product.Supplier.CompanyName</td>
+                            <td>@product.QuantityPerUnit</td>
+                            <td>@(product.Discontinued ? "Yes" : "No")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <br />
+            <button type="submit" class="btn btn-secondary rounded-pill" @onclick="Previous">Previous</button>
+            <button type="submit" class="btn btn-secondary rounded-pill" @onclick="Next">Next</button>
+        }
+        else
+        {
+            if(categoryID > 0)
+            {
+                <div class="col-md-12 text-center" style="font-size:36px; font-weight:bold;">
+                    <p>No products were found for the selected category!</p>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+
+    
+@if (feedback.Length > 0)
+{
+    <div class="alert alert-info">
+        <p>@feedback</p>
+    </div>
+}
+
+@if (errorMessages.Count > 0)
+{
+    <div class="alert alert-danger">
+        <p>Please fix the following errors:</p>
+        <ul>
+            @foreach (string error in errorMessages)
+            {
+                <li>@error</li>
+            }
+        </ul>
+    </div>
+}
+
+
+
