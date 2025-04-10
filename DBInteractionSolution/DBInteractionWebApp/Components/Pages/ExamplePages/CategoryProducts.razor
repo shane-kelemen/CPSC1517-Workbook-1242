@@ -37,7 +37,7 @@
                     @foreach (var product in products)
                     {
                         <tr>
-                            <td>&nbsp;</td>
+                            <td><a href="/productCRUD/@product.ProductID">Edit</a></td>
                             <td>@product.ProductName</td>
                             <td>@product.Supplier.CompanyName</td>
                             <td>@product.QuantityPerUnit</td>

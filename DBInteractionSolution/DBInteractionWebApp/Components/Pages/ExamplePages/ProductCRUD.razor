@@ -1,0 +1,132 @@
+﻿@page "/productCRUD/{productID:int?}"
+
+@using DBInteractionSystem.Entities
+
+<PageTitle>Product CRUD</PageTitle>
+
+<h1>Product CRUD</h1>
+
+<h3>Product Database Fundamental Operations</h3>
+<h4> ...example of maintaining a database record</h4>
+
+<EditForm EditContext="@editContext">
+    <DataAnnotationsValidator />
+
+    <div class="row">
+        <div class="offset-1 col-md-4">
+            
+            <label for="productID" class="form-label">Product ID : </label>
+            <InputNumber @bind-Value="currentProduct.ProductID"
+                         class="form-control" id="productID" readonly
+                         style="width:75px" />
+            <br /><br />
+
+            <label for="productName" class="form-label">Product Name : </label>
+            <InputText @bind-Value="currentProduct.ProductName"
+                         class="form-control" id="productName"
+                         placeholder="Enter Product Name"/>
+            <br /><br />
+
+            <label for="categoryID" class="form-label">Category ID : </label>
+            <InputSelect @bind-Value="currentProduct.CategoryID"
+                         class="form-control" id="categoryID">
+                <option value="0">Select a Category</option>
+                @foreach (Category category in categories)
+                {
+                    <option value="@category.CategoryID"
+                        selected="@(category.CategoryID == currentProduct.CategoryID)"> 
+                            @category.CategoryName
+                    </option>
+                }
+            </InputSelect>
+            <ValidationMessage For="@(() => currentProduct.CategoryID)" />
+            <br /><br />
+
+            <label for="supplierID" class="form-label">Supplier ID : </label>
+            <InputSelect @bind-Value="currentProduct.SupplierID"
+                         class="form-control" id="supplierID">
+                <option value="0">Select a Supplier</option>
+                @foreach (Supplier supplier in suppliers)
+                {
+                    <option value="@supplier.SupplierID"
+                            selected="@(supplier.SupplierID == currentProduct.SupplierID)">
+                        @supplier.CompanyName
+                    </option>
+                }
+            </InputSelect>
+            <ValidationMessage For="@(() => currentProduct.SupplierID)" />
+            <br /><br />
+
+        </div>
+
+        <div class="offset-1 col-md-4">
+
+            <label for="quantityPerUnit" class="form-label">Quantity Per Unit : </label>
+            <InputText @bind-Value="currentProduct.QuantityPerUnit"
+                       class="form-control" id="quantityPerUnit"
+                       placeholder="Enter Quantity Per Unit" />
+            <br /><br />
+
+            <label for="unitPrice" class="form-label">Unit Price : </label>
+            <InputNumber @bind-Value="currentProduct.UnitPrice"
+                         class="form-control" id="unitPrice" 
+                         style="width:100px" />
+            <ValidationMessage For="@(() => currentProduct.UnitPrice)" />
+            <br /><br />
+
+            <label for="minimumOrderQuantity" class="form-label">Minimum Order Quantity : </label>
+            <InputNumber @bind-Value="currentProduct.MinimumOrderQuantity"
+                         class="form-control" id="minimumOrderQuantity"
+                         style="width:100px" />
+            <br /><br />
+
+            <label for="unitsOnOrder" class="form-label">Units On Order : </label>
+            <InputNumber @bind-Value="currentProduct.UnitsOnOrder"
+                         class="form-control" id="unitsOnOrder"
+                         style="width:100px" />
+            <ValidationMessage For="@(() => currentProduct.UnitsOnOrder)" />
+            <br /><br />
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-outline-primary rounded-pill"
+                        style="width: 200px" @onclick="OnCreate">Create</button>
+            &nbsp;&nbsp;
+            <button type="submit" class="btn btn-outline-primary rounded-pill"
+                    style="width: 200px" @onclick="OnUpdate">Update</button>
+            &nbsp;&nbsp;
+        </div>
+    </div>
+    <br /><br />
+    <ValidationSummary />
+</EditForm>
+
+
+@if (feedback.Length > 0)
+{
+    <div class="alert alert-info">
+        <p>@feedback</p>
+    </div>
+}
+
+@if (errorMessages.Count > 0)
+{
+    <div class="alert alert-danger">
+        <p>Please fix the following errors:</p>
+        <ul>
+            @foreach (string error in errorMessages)
+            {
+                <li>@error</li>
+            }
+        </ul>
+    </div>
+}
+
+
+
+
+
+
