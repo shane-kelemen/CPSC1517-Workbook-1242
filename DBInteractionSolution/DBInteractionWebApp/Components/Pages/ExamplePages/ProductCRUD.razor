@@ -1,4 +1,8 @@
-﻿@page "/productCRUD/{productID:int?}"
+﻿<!-- Note the variable included in the {} along with the data type.
+      This will be bound in the code behind to the Parameter of the
+      same name.
+-->
+@page "/productCRUD/{productID:int?}"
 
 @using DBInteractionSystem.Entities
 
@@ -9,6 +13,12 @@
 <h3>Product Database Fundamental Operations</h3>
 <h4> ...example of maintaining a database record</h4>
 
+
+<!-- Using the Edit Form allows us to include a Validator that will highlight
+     our controls when they do not meet our data requirements.  We can check the
+     data in the code behind and then specify custom messages to be displayed directly
+     with the controls.
+-->
 <EditForm EditContext="@editContext">
     <DataAnnotationsValidator />
 
@@ -39,6 +49,10 @@
                     </option>
                 }
             </InputSelect>
+            <!-- This following line extracts the related message from the MessageStore in the code behind
+                 Note that the syntax in the For attribute references the same thing as the bind-Value
+                 of the control that it is intended for.  This pattern may be repeated for all controls.
+            -->
             <ValidationMessage For="@(() => currentProduct.CategoryID)" />
             <br /><br />
 
@@ -95,12 +109,50 @@
             <button type="submit" class="btn btn-outline-primary rounded-pill"
                         style="width: 200px" @onclick="OnCreate">Create</button>
             &nbsp;&nbsp;
+
             <button type="submit" class="btn btn-outline-primary rounded-pill"
                     style="width: 200px" @onclick="OnUpdate">Update</button>
+            &nbsp;&nbsp;
+
+            <button type="submit" class="btn btn-outline-primary rounded-pill"
+                    style="width: 200px" @onclick="OnDiscontinue">
+                Discontinue
+            </button>
+            &nbsp;&nbsp;
+
+            <button type="submit" class="btn btn-outline-primary rounded-pill"
+                    style="width: 200px" @onclick="OnActivate">
+                Activate
+            </button>
+            &nbsp;&nbsp;
+
+            <br /><br />
+
+            <button type="submit" class="btn btn-outline-primary rounded-pill"
+                    style="width: 200px" @onclick="OnDelete">
+                Delete
+            </button>
+            &nbsp;&nbsp;
+
+            <button type="submit" class="btn btn-outline-primary rounded-pill"
+                    style="width: 200px" @onclick="OnClear">
+                Clear Form
+            </button>
+            &nbsp;&nbsp;
+
+            <button type="submit" class="btn btn-outline-primary rounded-pill"
+                    style="width: 300px" @onclick="OnGoTo">
+                Go To Category Products
+            </button>
             &nbsp;&nbsp;
         </div>
     </div>
     <br /><br />
+
+    <!-- The validation summary may be placed anywhere in the Edit Form.  It will redisplay
+         all of the messages from the individual controls that hold invalid data. Generally 
+         placing the summary near the buttons is desired so the user immediately sees the feedback.
+    -->
     <ValidationSummary />
 </EditForm>
 
