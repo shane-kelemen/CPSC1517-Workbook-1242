@@ -87,7 +87,13 @@ namespace DBInteractionWebApp.Components.Pages.ExamplePages
             errorMessages.Clear();
             validationMessageStore.Clear();
 
-            currentProduct.ProductID = 0;       // This is what we check to indicate we have an insert operation
+            // UPDATE!  The following line has been commented out as one part of fixing the
+            //          tracking issue people have been experiencing.  Not setting the
+            //          ProductID = 0 will allow us to check in the insert if the product information 
+            //          should be used to attempt an insert.  If it is zero, then yes.  If it is not 
+            //          zero then no.  If no, the service method should throw an exception.  This will
+            //          also allow us to update or discontinue the product without issues.
+            //currentProduct.ProductID = 0;       // This is what we check to indicate we have an insert operation
 
             try
             {

@@ -17,6 +17,10 @@ namespace DBInteractionSystem.BLL
             _westWindContext = westWindContext;
         }
 
+        // UPDATE!  The .AsNoTracking() method was used below to ensure that entities
+        //          for all the suppliers are not created in the 
+        //          Entity Framework's Tracking subsystem.  This will help avoid the duplicate
+        //          entity tracking error that was being caused in an edge case. 
         public List<Supplier> Supplier_GetAll()
         {
             return _westWindContext.Suppliers

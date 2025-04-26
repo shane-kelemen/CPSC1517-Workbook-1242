@@ -47,7 +47,12 @@ namespace DBInteractionSystem.BLL
         /// <returns>A List of Product entity instances for the supplied category and paging values</returns>
         public List<Product> Product_GetProductsByCategory(int categoryID, int productPage, int productsPerPage)
         {
+            // UPDATE!  The .AsNoTracking() method was used below to ensure that entities
+            //          for all the products are not created in the 
+            //          Entity Framework's Tracking subsystem.  This will help avoid the duplicate
+            //          entity tracking error that was being caused in an edge case. 
             return _westWindContext.Products
+                                   .AsNoTracking()
                                    .Include(product => product.Supplier)
                                    .Where(product => product.CategoryID == categoryID)
                                    .OrderByDescending(product => product.Supplier.CompanyName)
@@ -71,7 +76,12 @@ namespace DBInteractionSystem.BLL
         /// <returns>A Product entity instance if it exists</returns>
         public Product Product_GetByID(int productID)
         {
+            // UPDATE!  The .AsNoTracking() method was used below to ensure that entities
+            //          for the specific category and supplier are not created in the 
+            //          Entity Framework's Tracking subsystem.  This will help avoid the duplicate
+            //          entity tracking error that was being caused in an edge case. 
             return _westWindContext.Products
+                                   .AsNoTracking()
                                    .Where(product => product.ProductID == productID)
                                    .FirstOrDefault();
         }
@@ -100,6 +110,14 @@ namespace DBInteractionSystem.BLL
             if (product == null)
             {
                 throw new ArgumentNullException("You must supply product information to be saved!");
+            }
+
+
+            // UPDATE!  This check was added to immediately abandon the Insert operation if a ProductID
+            //          was provided.  Only a product ID of 0 will be allowed past this point.
+            if (product.ProductID != 0)
+            {
+                throw new ArgumentException("Providing a ProductID is not permitted!  It will be automatically assigned to the identity column in the database.");
             }
 
             // All data should be checked to ensure it is legal.  An example check for the required ProductName
@@ -153,6 +171,16 @@ namespace DBInteractionSystem.BLL
             {
                 errors.Add(new Exception("A supplier does not exist for the included Supplier ID!"));
             }
+            // UPDATE!  Because we used the .AsNoTracking() method when retrieving our individual
+            //          product information in the Product_GetByID() method, the product entity
+            //          passed into this method will have a null for its internal product.Supplier
+            //          entity.  Trying to use it will cause a NullReferenceException to be thrown,
+            //          so assigning the supplier we found above to the product.Supplier entity will
+            //          fix the problem.
+            else
+            {
+                product.Supplier = supplier;
+            }
 
             Category category = _westWindContext.Categories
                                                 .Where(category => category.CategoryID == product.CategoryID)
@@ -162,13 +190,26 @@ namespace DBInteractionSystem.BLL
             {
                 errors.Add(new Exception("A category does not exist for the included Category ID!"));
             }
+            // UPDATE!  Because we used the .AsNoTracking() method when retrieving our individual
+            //          product information in the Product_GetByID() method, the product entity
+            //          passed into this method will have a null for its internal product.Category
+            //          entity.  Trying to use it will cause a NullReferenceException to be thrown,
+            //          so assigning the category we found above to the product.Category entity will
+            //          fix the problem.
+            else
+            {
+                product.Category = category;
+            }
+
 
             bool exists = false;
 
             // Check to see if the product with the provided features already exists 
             exists = _westWindContext
                      .Products
-                     .Include(product => product.Supplier)
+                     // UPDATE!  As we have already found and assigned the category and supplier
+                     //          entities, this .Include() should not be necessary.
+                     //.Include(product => product.Supplier)
                      .Any(currentProduct => currentProduct.SupplierID == product.SupplierID
                                             && currentProduct.ProductName == product.ProductName
                                             && currentProduct.QuantityPerUnit == product.QuantityPerUnit);
@@ -276,6 +317,13 @@ namespace DBInteractionSystem.BLL
             if (product == null)
             {
                 throw new ArgumentNullException("You must supply product information to be saved!");
+            }
+
+            // UPDATE!  If the product ID is invalid for the database, there is no point
+            // in continuing with an update operation that will not affect anything.
+            if (product.ProductID <= 0)
+            {
+                throw new ArgumentException("You must supply a valid ProductID, greater than 0!");
             }
 
 
@@ -446,6 +494,13 @@ namespace DBInteractionSystem.BLL
                 throw new ArgumentNullException("You must supply a product for discontinuation!");
             }
 
+            // UPDATE!  If the product ID is invalid for the database, there is no point
+            // in continuing with a discontinue operation that will not affect anything.
+            if (product.ProductID <= 0)
+            {
+                throw new ArgumentException("You must supply a valid ProductID, greater than 0!");
+            }
+
             Product exists = _westWindContext
                             .Products
                             .FirstOrDefault(currentProduct => currentProduct.ProductID == product.ProductID);
@@ -491,6 +546,13 @@ namespace DBInteractionSystem.BLL
             if (product == null)
             {
                 throw new ArgumentNullException("You must supply a product for reactivation!");
+            }
+
+            // UPDATE!  If the product ID is invalid for the database, there is no point
+            // in continuing with an activate operation that will not affect anything.
+            if (product.ProductID <= 0)
+            {
+                throw new ArgumentException("You must supply a valid ProductID, greater than 0!");
             }
 
             Product exists = _westWindContext
@@ -541,6 +603,13 @@ namespace DBInteractionSystem.BLL
             if (product == null)
             {
                 throw new ArgumentNullException("You must supply a product for reactivation!");
+            }
+
+            // UPDATE!  If the product ID is invalid for the database, there is no point
+            // in continuing with a delete operation that will not affect anything.
+            if (product.ProductID <= 0)
+            {
+                throw new ArgumentException("You must supply a valid ProductID, greater than 0!");
             }
 
             // The Any() method returns true if at least one item in the collection satisfies the condition
